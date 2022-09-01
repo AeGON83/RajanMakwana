@@ -8,13 +8,20 @@
     position: fixed;
     top: 0;
     height: 100%;
+    background: -o-repeating-linear-gradient(45deg,
+            var(--themeColor) 25%,
+            var(--themeColor) 50%,
+            var(--color2) 50%,
+            var(--color2) 75%);
     background: repeating-linear-gradient(45deg,
             var(--themeColor) 25%,
             var(--themeColor) 50%,
             var(--color2) 50%,
             var(--color2) 75%);
     background-size: var(--stripe-size) var(--stripe-size);
+    -webkit-animation: stripeTransform var(--duration) linear infinite;
     animation: stripeTransform var(--duration) linear infinite;
+    -webkit-animation: stripeBackgroundPosition var(--duration) linear infinite;
     animation: stripeBackgroundPosition var(--duration) linear infinite;
     background-position: calc(var(--stripe-size) * var(--stripeDirection)) 0;
     /* transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
@@ -25,6 +32,7 @@
     height: 100%;
     content: "";
     position: absolute;
+    background: -o-radial-gradient(center, ellipse, #1b283600 0%, rgb(9, 10, 15) 100%);
     background: radial-gradient(ellipse at center, #1b283600 0%, rgb(9, 10, 15) 100%);
 }
 
@@ -39,6 +47,16 @@
         transform: translateX(calc(var(--stripe-size) * var(--stripeDirection)));
     }
 } */
+
+@-webkit-keyframes stripeBackgroundPosition {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: calc(var(--stripe-size) * var(--stripeDirection)) 0;
+    }
+}
 
 @keyframes stripeBackgroundPosition {
     0% {

@@ -1,11 +1,14 @@
 .social-menu ul {
-    /* transform: ; */
     position: absolute;
     top: 92.5%;
     left: 50%;
     padding: 0;
     margin: 0;
+    -webkit-transform: scale(0.7) translate(-65%, -50%);
+    -ms-transform: scale(0.7) translate(-65%, -50%);
     transform: scale(0.7) translate(-65%, -50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -14,6 +17,8 @@
     width: 100%;
     text-align: center;
     top: 100%;
+    -webkit-transform: translate(0, 100%);
+    -ms-transform: translate(0, 100%);
     transform: translate(0, 100%);
     color: white;
     content: "Devloped by @ Rajan Makwana";
@@ -34,6 +39,8 @@
 .social-menu ul li .fab {
     font-size: calc(1vw + 1vh);
     line-height: calc(2vw + 2vh);
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s;
     color: #000;
 }
@@ -50,11 +57,15 @@
     border-radius: 50%;
     background-color: #fff;
     text-align: center;
+    -webkit-transition: .6s;
+    -o-transition: .6s;
     transition: .6s;
     /* box-shadow: 0 0.33vw 0.30vw rgba(255, 255, 255, 0.5); */
 }
 
 .social-menu ul li a:hover {
+    -webkit-transform: translate(0, -10%);
+    -ms-transform: translate(0, -10%);
     transform: translate(0, -10%);
 }
 

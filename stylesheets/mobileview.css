@@ -1,7 +1,4 @@
 @media (max-aspect-ratio:8/10) {
-    /* :root {
-        --themeColor: red !important;
-    } */
 
     /* 
     NAVIGATION
@@ -20,10 +17,13 @@
     }
 
     #settings:hover {
+        -webkit-animation: none;
         animation: none;
     }
 
     .panel-click {
+        -webkit-transform: translate(-50%, 5%) scale(0.5) !important;
+        -ms-transform: translate(-50%, 5%) scale(0.5) !important;
         transform: translate(-50%, 5%) scale(0.5) !important;
     }
 
@@ -50,6 +50,8 @@
     }
 
     #contact-me-container div ul {
+        -webkit-transform: translate(-50%, 30%) scale(1.7);
+        -ms-transform: translate(-50%, 30%) scale(1.7);
         transform: translate(-50%, 30%) scale(1.7);
 
     }
@@ -71,7 +73,9 @@
             "cover_intro cover_intro"
             "cover_profile cover_profile"
             "download_cv download_cv";
+        -ms-grid-columns: 4fr 6fr;
         grid-template-columns: 4fr 6fr;
+        -ms-grid-rows: 7% 15% 63% 15%;
         grid-template-rows: 7% 15% 63% 15%;
     }
 
@@ -85,6 +89,8 @@
         position: absolute;
         left: 50%;
         top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
 
@@ -120,6 +126,8 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        -webkit-transform: translate(-50%, -50%) scale(2);
+        -ms-transform: translate(-50%, -50%) scale(2);
         transform: translate(-50%, -50%) scale(2);
     }
 
@@ -141,6 +149,8 @@
     #aboutImage {
         width: 200%;
         border-radius: 2vh;
+        -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
         transform: translate(-50%);
         z-index: -1;
     }
@@ -167,6 +177,10 @@
         font-size: 2vw;
     }
 
+    .skill-icons li {
+        border-radius: 50% !important;
+    }
+
     #text-container {
         top: 15%;
     }
@@ -187,6 +201,9 @@
     #projectlist {
         --cardWidth: 5.8181vh;
         width: 76.0869%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 1.5vh;
     }
@@ -195,12 +212,16 @@
         background-position: bottom;
         left: 50%;
         top: 0;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
         transform: translateX(-50%);
         height: var(--cardWidth);
         width: min(calc(var(--cardWidth) * 7), 100%);
     }
 
     #projectlist li::before {
+        -webkit-transform: translate(0, -100%);
+        -ms-transform: translate(0, -100%);
         transform: translate(0, -100%);
     }
 
