@@ -1,0 +1,51 @@
+#stripebg {
+    --stripe-size: 100px;
+    --color2: #313131;
+    --duration: 0s;
+    --stripeDirection: -1;
+
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background: repeating-linear-gradient(45deg,
+            var(--themeColor) 25%,
+            var(--themeColor) 50%,
+            var(--color2) 50%,
+            var(--color2) 75%);
+    background-size: var(--stripe-size) var(--stripe-size);
+    animation: stripeTransform var(--duration) linear infinite;
+    animation: stripeBackgroundPosition var(--duration) linear infinite;
+    background-position: calc(var(--stripe-size) * var(--stripeDirection)) 0;
+    /* transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+}
+
+#stripebg::after {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    background: radial-gradient(ellipse at center, #1b283600 0%, rgb(9, 10, 15) 100%);
+}
+
+
+
+/* @keyframes stripeTransform {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(var(--stripe-size) * var(--stripeDirection)));
+    }
+} */
+
+@keyframes stripeBackgroundPosition {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: calc(var(--stripe-size) * var(--stripeDirection)) 0;
+    }
+}

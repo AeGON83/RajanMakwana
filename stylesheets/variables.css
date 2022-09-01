@@ -1,0 +1,18 @@
+* {
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bgGradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    --bgAnimation: gradient 15s ease infinite;
+    --bubbleAnimation: bubbleBorder 7.5s linear infinite alternate;
+    --gradientBorderWidth: 1vw;
+    --themeColor: white;
+    --themeColorBack: initial;
+}
+
+::selection {
+    background: var(--themeColorBack);
+}

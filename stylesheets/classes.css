@@ -1,0 +1,28 @@
+.highlight {
+    color: var(--themeColor);
+    font-weight: bold;
+}
+
+.page-title {
+    color: white;
+    position: absolute;
+    display: inline;
+    left: 4%;
+    top: 5%;
+    font-size: 3vmin;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.page-title::before {
+    content: "";
+    height: 100%;
+    padding-right: calc(0.4vmin + 0.4vmax);
+    border-left: solid calc(0.4vmin + 0.4vmax) var(--themeColor);
+}
+
+.display::after {
+    opacity: 1 !important;
+}

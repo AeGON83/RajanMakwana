@@ -1,0 +1,278 @@
+#cover {
+    background-size: cover;
+    background-image: radial-gradient(circle at top, #41414179 0%, #100e17 44%);
+    background-color: #100e17;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 4vw;
+    height: calc(100vh - 4vw);
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+    width: 92vw;
+    display: grid;
+    grid-template-areas:
+        "navigation navigation navigation"
+        "cover_intro cover_profile cover_profile"
+        "download_cv cover_profile cover_profile";
+    grid-template-columns: 4fr 6fr;
+    grid-template-rows: 10% 60% 30%;
+}
+
+
+#cover_intro {
+    cursor: default;
+    padding: 10% 0 0 10%;
+    grid-area: cover_intro;
+
+}
+
+#cover_profile {
+    grid-area: cover_profile;
+    position: relative;
+}
+
+#download_cv {
+    grid-area: download_cv;
+}
+
+
+.hello_world {
+    font-family: 'VT323', monospace;
+    color: var(--themeColor);
+    font-size: 1.5vw;
+}
+
+#dots {
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    animation: dots 3s linear infinite;
+}
+
+.name {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 3.83vw;
+    text-overflow: ellipsis;
+    transition: text-shadow 0.4s ease-out;
+}
+
+.name:hover {
+    text-shadow: 0.33vw 0 0 var(--themeColorBack);
+    transition: text-shadow 0.4s ease-in;
+}
+
+
+#name1 {
+    padding-top: 1.8vw;
+    text-overflow: ellipsis;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 1.97vw;
+    line-height: calc(1vw);
+}
+
+#b_container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#d_buttons {
+    margin: 0 0 0 10%;
+}
+
+.buttons {
+    cursor: pointer;
+}
+
+.buttons>a {
+    position: relative;
+    display: inline-block;
+    width: 7vw;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1vw;
+    color: white;
+    border: 0.13vw solid var(--themeColor);
+    padding: 0.8vw;
+    margin-right: 1.5vw;
+    text-decoration-line: none;
+    text-align: center;
+    /* for animation */
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+
+.buttons>a:hover {
+    border-bottom: solid var(--themeColor) 0.4vw;
+    background-color: var(--themeColorBack);
+    transition: 0.3s ease-in;
+}
+
+.buttons>a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0) 25%, rgb(202, 196, 196), rgba(255, 255, 255, 0) 60%);
+    transition: 0.5s ease-in-out;
+}
+
+.buttons>a:hover::after {
+    left: -100%;
+    transition: 0.6s ease-in;
+}
+
+#download::before {
+    position: relative;
+    left: -20%;
+    font-size: 120%;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    color: var(--themeColor);
+    content: "\f0ab";
+    transition: 0.3s ease-in-out;
+}
+
+#download:hover::before {
+    color: white;
+    transition: 0.3s ease-in;
+}
+
+
+#myPic {
+    height: 90%;
+    background-image: url(images/cover-profile.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-filter: drop-shadow(2px 1px 0 var(--themeColor)) drop-shadow(-1px -1px 0 var(--themeColor));
+    filter: drop-shadow(2px 1px 0 var(--themeColor)) drop-shadow(-1px -1px 0 var(--themeColor));
+}
+
+#myPic::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url(images/profileBg.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    transform: rotate(180deg) scale(0.9);
+}
+
+#about-me-container {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    display: grid;
+    position: absolute;
+    grid-template-areas: 'aboutText aboutImage';
+    grid-template-columns: 50% 50%;
+    transform: scale(0.5);
+    opacity: 0;
+    z-index: -10;
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 2vw;
+}
+
+.showAbout {
+    opacity: 1 !important;
+    z-index: 100 !important;
+    transform: scale(0.8) !important;
+}
+
+#aboutText {
+    --aboutDelay: 0.4s;
+    border-top-left-radius: 2vw;
+    border-bottom-left-radius: 2vw;
+    width: 100%;
+    grid-area: aboutText;
+    background-color: var(--themeColorBack);
+}
+
+#aboutImage {
+    border-top-right-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    grid-area: aboutImage;
+    background-color: var(--themeColorBack);
+    background-image: url(images/hobbieCollage.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#aboutText p {
+    color: white;
+    font-size: clamp(0.7rem, calc(1vmax + 1vmin), 5rem);
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 2vh 5%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: none;
+}
+
+.showP {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+#aboutText p:first-child {
+    text-align: center;
+    padding: 6vh 5%;
+    font-size: clamp(0.7rem, calc(1vmax + 1.5vmin), 3rem);
+    font-family: 'Playfair Display', serif;
+    transform: translateY(0);
+    transition-delay: calc(var(--aboutDelay) - 200ms);
+}
+
+#aboutText p:first-child::after {
+    content: '';
+    width: 50%;
+    height: calc(1vmax + 1vmin);
+    border-bottom: solid white;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#aboutText p:nth-child(2) {
+    transition-delay: calc(var(--aboutDelay) + 0.2s) !important;
+}
+
+#aboutText p:nth-child(3) {
+    transition-delay: calc(var(--aboutDelay) + 0.35s) !important;
+}
+
+#aboutText p:nth-child(4) {
+    transition-delay: calc(var(--aboutDelay) + 0.5s) !important;
+}
+
+#aboutText p:nth-child(5) {
+    transition-delay: calc(var(--aboutDelay) + 0.75s) !important;
+}
+
+#aboutText p span {
+    display: block;
+    color: var(--themeColor);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 800;
+}
+
+#aboutText p span i {
+    padding-right: 2%;
+}

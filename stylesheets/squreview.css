@@ -1,0 +1,9 @@
+/* media query for aspect ratio around 1:1 */
+
+@media (max-aspect-ratio: 13/10) and (min-aspect-ratio:8/10) {
+
+    .name {
+        font-size: calc(4.37vmin + 1.5vw);
+    }
+
+}

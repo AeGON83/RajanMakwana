@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&family=Amatic+SC:wght@700&family=Concert+One&family=Courgette&family=Fira+Sans+Extra+Condensed&family=Fjalla+One&family=IBM+Plex+Mono:wght@100&family=IBM+Plex+Sans+Condensed:wght@500&family=Kaushan+Script&family=Lato&family=Macondo&family=Macondo+Swash+Caps&family=Montserrat+Alternates:wght@100&family=Montserrat:wght@200;300;400;600;800&family=Playfair+Display&family=Source+Sans+Pro&family=VT323&family=Yeseva+One&display=swap');
+@import url(variables.css);
+@import url(scrollbar.css);
+@import url(navigationbar.css);
+@import url(homepage.css);
+@import url(projectspage.css);
+@import url(skillspage.css);
+@import url(keyframes.css);
+@import url(squreview.css);
+@import url(classes.css);
+@import url(stripebg.css);
+@import url(socialMedia.css);
+@import url(mobileview.css);

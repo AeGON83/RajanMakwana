@@ -1,0 +1,27 @@
+@keyframes settingBorder {
+    0% {
+        outline-offset: 0;
+    }
+
+    100% {
+        outline-offset: 0.5vw;
+        outline-color: transparent;
+    }
+}
+
+
+@keyframes dots {
+
+    0%,
+    10% {
+        display: none;
+    }
+
+    10% {
+        width: 0.01vw;
+    }
+
+    100% {
+        width: 1.6vw
+    }
+}

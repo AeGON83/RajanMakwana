@@ -1,0 +1,232 @@
+#projects {
+    position: relative;
+    height: 100vh;
+    width: 92vw;
+    background-size: cover;
+    background: linear-gradient(rgba(151, 151, 151, 0.1), #100e17 20%);
+    background-color: #100e17;
+    margin: 0 auto;
+}
+
+#projectlist {
+    --cardWidth: 5.3109vw;
+    display: flex;
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 1.5vw;
+}
+
+
+#projectlist li {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    overflow: hidden !important;
+    position: relative;
+    list-style-type: none;
+    display: inline-block;
+    width: var(--cardWidth);
+    height: min(calc(var(--cardWidth) * 7), 100%);
+    background-color: grey;
+    background-position: left;
+    border-radius: 5vmax;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: repeat;
+    filter: grayscale(100%);
+    background-image: url(images/project-images/projects-bg.jpg);
+}
+
+.cardWidth {
+    filter: grayscale(0%) !important;
+    width: calc(var(--cardWidth) * 7) !important;
+}
+
+
+#projectlist li::before {
+    opacity: 0;
+    content: '';
+    width: 100%;
+    height: var(--cardWidth);
+    display: block;
+    position: absolute;
+    top: 100%;
+    transform: translate(0, -100%);
+    background-color: rgba(255, 255, 255, 0.45);
+    border-radius: 0;
+    border-bottom-left-radius: 5vmax;
+    border-bottom-right-radius: 5vmax;
+    transition: 0.5s ease-in-out;
+}
+
+.pro-psedo-slide::before {
+    transition: 0.5s ease-in;
+    opacity: 1 !important;
+}
+
+#projectlist li::after {
+    content: "";
+    width: var(--cardWidth);
+    height: var(--cardWidth);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translate(0%, -100%) rotate(0turn) scale(0.8);
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+    font-family: "Font Awesome 5 Free";
+    font-weight: 800;
+    font-size: calc(1.5vmax + 2vmin);
+    text-align: center;
+    line-height: var(--cardWidth);
+}
+
+#projectlist li:nth-child(1):after {
+    content: "\f007";
+    color: #ED5565;
+}
+
+#projectlist li:nth-child(2):after {
+    content: "\f1bb";
+    color: #FFCE54;
+}
+
+#projectlist li:nth-child(3):after {
+    content: "\f2dc";
+    color: #25b6f4;
+}
+
+#projectlist li:nth-child(4):after {
+    content: "\f4d8";
+    color: #2ECC71;
+
+}
+
+#projectlist li:nth-child(5):after {
+    content: "\f56b";
+    color: #AC92EC;
+}
+
+
+.pro-psedo-slide::after {
+    left: 49% !important;
+    transform: translate(-100%, -100%) scale(0.8) !important;
+}
+
+
+.projectHeader {
+    position: inherit;
+    top: 100%;
+    left: 51%;
+    height: var(--cardWidth);
+    transform: translate(0, -100%);
+}
+
+.projectHeader p {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(0.8vmax + 0.8vmin);
+    transition: 0s ease-in 0.2s;
+}
+
+.cardWidth>.projectHeader p {
+    opacity: 1 !important;
+}
+
+/* for empty projects page */
+
+.empty {
+    opacity: 0;
+    font-weight: 600;
+    color: white;
+    font-size: calc(var(--cardWidth) * 0.6);
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    transform: translate(-50%, -40%);
+}
+
+.cardWidth .empty {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) !important;
+    transition: 0.5s ease-in 0.4s, transform 0.2s ease-in 0.4s;
+}
+
+
+.cardWidth .pro-description p {
+    opacity: 1 !important;
+    transition: 0.3s ease-in 0.4s;
+    transform: translate(0, -50%) !important;
+}
+
+.cardWidth .pro-description div {
+    opacity: 1 !important;
+    transition: 0.3s ease-in 0.4s, opacity 0s ease 0.5s;
+    transform: translate(-50%, 0%) !important;
+}
+
+
+.pro-description {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+}
+
+.pro-description p {
+    opacity: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: white;
+    font-size: calc(var(--cardWidth) * 0.5);
+    padding: 0 5%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -40%);
+}
+
+
+.pro-description div {
+    opacity: 0;
+    display: block;
+    text-align: center;
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    width: 50%;
+    position: relative;
+    transform: translate(-50%, -100%);
+    left: 50%;
+    border-bottom-left-radius: 5vmax;
+    border-bottom-right-radius: 5vmax;
+
+}
+
+.pro-description div i {
+    font-size: calc(2vmax + 2vmin);
+    padding: 2%;
+}
