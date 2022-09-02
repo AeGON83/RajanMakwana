@@ -40,7 +40,7 @@
     display: inline-block;
     -webkit-text-decoration-line: none;
     text-decoration-line: none;
-    padding: 0.1 0vw;
+    padding: 0vw;
     width: 7vw;
     font-family: 'Montserrat', sans-serif;
     font-size: 1vw;
@@ -148,7 +148,6 @@
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     border-top: 0.5vmin solid var(--themeColor);
-    /* background-color: red; */
 }
 
 .social-menu a:nth-child(4) {

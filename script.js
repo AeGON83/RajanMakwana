@@ -40,7 +40,8 @@ let arr = document.querySelectorAll('.skillCatagory'),
     skillType = document.querySelectorAll('#skill-groups>li'),
     skillIcons = document.querySelectorAll('.skill-icons li'),
     skillText = document.getElementsByClassName('skill-text'),
-    lastSkill = undefined;
+    lastSkill = undefined,
+    skillList = ['prog', 'web', 'tech', 'other'];
 
 skillType[0].addEventListener('click', function () { display(0); });
 skillType[1].addEventListener('click', function () { display(1); });
@@ -50,18 +51,23 @@ skillType[3].addEventListener('click', function () { display(3); });
 display(0);
 
 function display(i) {
+    if (i == lastSkill) {
+        return;
+    }
+    currSkillSet = document.getElementById(skillList[i]);
     arr[i].style.opacity = '1';
     skillType[i].style.fontWeight = '600';
     skillType[i].style.color = 'var(--themeColor)';
     skillText[i].style.opacity = '1';
-    skillIcons[i].style.transform = 'scale(1)';
+    currSkillSet.classList.add('activeSkill');
 
     if (lastSkill != undefined) {
         arr[lastSkill].style.opacity = '0';
         skillType[lastSkill].style.fontWeight = 'normal';
         skillType[lastSkill].style.color = 'white';
         skillText[lastSkill].style.opacity = '0';
-        skillIcons[lastSkill].style.transform = 'scale(1)';
+        currSkillSet = document.getElementById(skillList[lastSkill])
+        currSkillSet.classList.remove('activeSkill');
     }
     lastSkill = i;
 }

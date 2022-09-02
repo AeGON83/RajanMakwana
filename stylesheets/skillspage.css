@@ -8,6 +8,7 @@
     background: linear-gradient(rgba(151, 151, 151, 0.1), #100e17 20%);
     background-color: #100e17;
     background-size: cover;
+    overflow: hidden;
 }
 
 
@@ -125,14 +126,12 @@
     background-position: center center;
 }
 
-#prog {
-    opacity: 1;
-}
+/* active skill logos class */
 
-#prog ul li {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
+.activeSkill ul li {
+    -webkit-transform: scale(1) !important;
+    -ms-transform: scale(1) !important;
+    transform: scale(1) !important;
 }
 
 .skill-icons:nth-child(1) {
@@ -247,15 +246,15 @@
 }
 
 #other1 li:nth-child(1) {
-    background-color: green;
+    background-color: rgb(201, 130, 0);
 }
 
 #other1 li:nth-child(2) {
-    background-color: rgb(9, 133, 121);
+    background-color: green;
 }
 
 #other1 li:nth-child(3) {
-    background-color: orange;
+    background-color: rgb(9, 133, 121);
 }
 
 #other1 li:nth-child(3)>p {
@@ -263,7 +262,7 @@
 }
 
 #other2 li:nth-child(1) {
-    background-color: red;
+    background-color: rgb(200, 0, 0);
 }
 
 #other2 li:nth-child(1)>p {

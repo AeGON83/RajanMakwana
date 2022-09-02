@@ -8,6 +8,7 @@
     background: linear-gradient(rgba(151, 151, 151, 0.1), #100e17 20%);
     background-color: #100e17;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 #projectlist {
